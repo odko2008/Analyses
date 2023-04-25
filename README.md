@@ -16,7 +16,7 @@ paup> exe myfile.nex;
   ##### To store all of the output that PAUP presents in the Terminal window, start a log file 
 paup> log file=svdquartets_date.log;
   ###### or using command "-L" can create a log file.  
-paup> exe myfile.nex -L myfile.nex; 
+paup> exe myfile.nex -L svdquartets_date.log; 
   ###### Before running SVDquartets, checked the best substitution model and constructed ML to compare the results with further analyses or check any issues. 
 paup> dset distance=logdet;
 
