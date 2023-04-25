@@ -19,11 +19,17 @@ paup> log file=svdquartets_date.log;
 paup> exe myfile.nex -L myfile.nex; 
   ###### Before running SVDquartets, checked the best substitution model and constructed ML to compare the results with further analyses or check any issues. 
 paup> dset distance=logdet;
+
 paup> nj;
+
 paup> automodel;
+
 paup> set criterion=likelihood;
+
 paup> hsearch;
+
 paup> describe/plot=p;
+
   ###### To see the help system of the SVDquartets in PAUP program. 
 paup> svdq ?
   ##### The following command was used to construct phylogenetic tree with multilocus dataset of brown bears, cave and other bear species. 
