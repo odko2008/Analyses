@@ -33,7 +33,10 @@ paup> describe/plot=p;
   ###### To see the help system of the SVDquartets in PAUP program. 
 paup> svdq ?
   ##### The following command was used to construct phylogenetic tree with multilocus dataset of brown bears, cave and other bear species. 
-paup> svdq evalq=all bootstrap=multilocus nreps=100;
+paup> svdq evalq=all bootstrap nreps=100;
+
 paup> describetree1 / plot=phylogram; # to see the best tree
+
 paup> savetrees file=svdquartets_bootstrap_050223.tre
+
 paup> quit;
