@@ -13,5 +13,6 @@ python vcf2phylip.py -h
 ##### Please see the command descibed in the directory: SVDquartets_PAUP_commands
 
 #### 3.3. Constructing RAxML phylogenetic tree 
-load the bash script 
-./
+#####  Download and load the bash script 
+#####  You may need to change the input file name or the appropriate model for your data
+./raxml_bears.sh
