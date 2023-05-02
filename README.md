@@ -10,46 +10,8 @@ python vcf2phylip.py --input myfile.vcf --outgroup Spectacled --fasta --nexus
 python vcf2phylip.py -h
 
 #### 3.2. Constructing SVDquartets phylogenetic tree using the program PAUP
-  ##### Start program PAUP in your terminal and execute the NEXUS file 
-paup
-paup> exe myfile.nex;
-  ##### To store all of the output that PAUP presents in the Terminal window, start a log file 
-paup> log file=svdquartets_date.log;
-  ###### or using command "-L" can create a log file.  
-paup> exe myfile.nex -L svdquartets_date.log; 
-  ###### Before running SVDquartets, checked the best substitution model and constructed ML to compare the results with further analyses or check any issues. 
-paup> dset distance=logdet;
-
-paup> nj;
-
-paup> automodel;
-
-paup> set criterion=likelihood;
-
-paup> hsearch;
-
-paup> describe/plot=p;
-
-  ###### To see the help system of the SVDquartets in PAUP program. 
-paup> svdq ?
-  ##### The following command was used to construct phylogenetic tree with multilocus dataset of brown bears, cave and other bear species. 
-paup> svdq evalq=all bootstrap nreps=100;
-
-paup> describetree1 / plot=phylogram; # to see the best tree
-
-paup> savetrees file=svdquartets_bootstrap_050223.tre
-
-paup> quit;
+##### Please see the command descibed in the directory: SVDquartets_PAUP_commands
 
 #### 3.3. Constructing RAxML phylogenetic tree 
 load the bash script 
-#!/bin/bash
-#$-M odko2008@yahoo.com
-#$-S /bin/bash
-#$-N Test_raxml
-#$-o /mnt/lfs2/odko/bear_wgs/raxml.out
-#$-l mf=10000M
-#$-l march=x86_64
-cd /mnt/lfs2/odko/bear_wgs/raxml/
-. /etc/profile
-/mnt/lfs2/odko/bear_wgs/raxml/standard-RAxML-master/raxmlHPC-SSE3 -N 10 -m GTRGAMMAX -s 32inds_nogrizzly1_noAncient.fasta -n sequence32inds_2023_v1.tre -p 1019778819 pause
+./
