@@ -14,5 +14,4 @@ python vcf2phylip.py -h
 
 #### 3.3. Constructing RAxML phylogenetic tree 
 #####  Download and load the bash script 
-#####  You may need to change the input file name or the appropriate model for your data
 ./raxml_bears.sh
