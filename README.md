@@ -1,17 +1,37 @@
-# Genome-analyses-for-brown-bears
-Scripts used for analytical genomics analyses, including phylogenetic, structure, genetic diversity and differentiation
+# Genomics-brown-bears
+----------------
+Scripts used for analytical genomics analyses, including phylogenetic, structure, genetic diversity and differentiation.
 
-## 3. Building phylogenetic trees
-#### 3.1. Convert SNPs in VCF format to PHYLIP, NEXUS, binary NEXUS, or FASTA alignments for phylogenetic analysis
-  ##### Install vcf2phylip.py (Ortiz, E.M. 2019) from the link: https://github.com/edgardomortiz/vcf2phylip/ in your directory
-  ##### Following command was used to convert the vcf files to PHYLIP, NEXUS, and or FASTA files. 
+<!-- usage note: edit the H1 title above to personalize the manuscript -->
+[![HTML Manuscript](https://img.shields.io/badge/manuscript-HTML-blue.svg)](https://.../)
++ 1. Population structure
+----------------
+
++ 2. Calculating Fst and Dxy
+----------------
+
+
++ 3. Building phylogenetic trees
+----------------
+#### 3.1. Convert SNPs in VCF format to PHYLIP, NEXUS, binary NEXUS, or FASTA alignments for phylogenetic analysis.
+#### Please install vcf2phylip.py (Ortiz, E.M. 2019) from the link: [VCF to FASTA](https://github.com/odko2008/Genome-analyses-for-brown-bears/blob/main/vcf2phylip.py)
+
+#### The following command was used to convert the VCF to PHYLIP, NEXUS, and or FASTA files. 
+
+```
 python vcf2phylip.py --input myfile.vcf --outgroup Spectacled --fasta --nexus
-  ##### To show the help of the program and see additional command, please type the following command
+```
+  ##### To show the help of the program and see additional command, please type the following command.
+
+```
 python vcf2phylip.py -h
+```
 
-#### 3.2. Constructing SVDquartets phylogenetic tree using the program PAUP
-##### Please see the command descibed in the directory: SVDquartets_PAUP_commands
+#### 3.2. Constructing SVDquartets phylogenetic tree using the program PAUP.
+> Please open [SVDquartets_PAUP_commands](https://github.com/odko2008/Genome-analyses-for-brown-bears/blob/main/SVDquartets_PAUP_commands) for the details.
 
-#### 3.3. Constructing RAxML phylogenetic tree 
-#####  Download and load the bash script 
+#### 3.3. Constructing RAxML phylogenetic tree. 
+#### Please load the bash script. 
+```
 ./raxml_bears.sh
+```
