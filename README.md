@@ -6,29 +6,28 @@ Scripts used for analytical genomics analyses, including phylogenetic, structure
 <!-- usage note: edit the H1 title above to personalize the manuscript -->
 [![HTML Manuscript](https://img.shields.io/badge/manuscript-HTML-blue.svg)](https://.../)
 
-----------------
+
 ## 1. Population structure
 ----------------
 
 
 
-----------------
+
 ## 2. Calculating Fst and Dxy
 ----------------
 2.1. Calculating pairwise Fst.
 
-<p> I included the script [Fst.sh](https://github.com/odko2008/Genome-analyses-for-brown-bears/blob/main/vcf2phylip.py), which can calculate the pairwise Fst estimates between the populations using VCFtools (Weir and Cockerham, 1984). In the script, the vcf file name is fixed, so you can change as you want. Please create text files for each population contaning the list of individuals in the directory before running the script. 
+The script, [Fst.sh](https://github.com/odko2008/Genome-analyses-for-brown-bears/blob/main/vcf2phylip.py) can calculate the pairwise Fst estimates between the populations using VCFtools (Weir and Cockerham, 1984). The VCF file name is fixed in the script, so you can change it as same as your file. Before running the script, please create text files for each population containing the list of individuals in the directory. 
 
 ```
 ./Fst.sh
 ```
 2.2. Calculating pairwise Dxy.
 
-----------------
+
 ## 3. Building phylogenetic trees
 ----------------
-#### 3.1. Convert SNPs in VCF format to PHYLIP, NEXUS, binary NEXUS, or FASTA alignments for phylogenetic analysis.
-<p> Please install vcf2phylip.py (Ortiz, E.M. 2019) from the link: [VCF to FASTA](https://github.com/odko2008/Genome-analyses-for-brown-bears/blob/main/vcf2phylip.py). The following command was used to convert the VCF to PHYLIP, NEXUS, and or FASTA files. 
+#### 3.1. Convert SNPs in VCF format to PHYLIP, NEXUS, binary NEXUS, or FASTA alignments for phylogenetic analysis. Please install vcf2phylip.py (Ortiz, E.M. 2019) from the link: [VCF to FASTA](https://github.com/odko2008/Genome-analyses-for-brown-bears/blob/main/vcf2phylip.py). The following command was used to convert the VCF to PHYLIP, NEXUS, and FASTA files. 
 
 ```
 python vcf2phylip.py --input myfile.vcf --outgroup Spectacled --fasta --nexus
@@ -47,6 +46,6 @@ python vcf2phylip.py -h
 ```
 ./raxml_bears.sh
 ```
---------------------------------
+
 ## 4. Historical demography
 --------------------------------
