@@ -1,7 +1,8 @@
 #!/bin/bash
-for pop1 in $(find ind_*)
+for pop1 in $(find *txt)
 do
-for pop2 in $(find ind_*)
+for pop2 in $(find *txt)
 do
-vcftools --gzvcf PATH/Genome.vcf --weir-fst-pop $pop1 --weir-fst-pop $pop2 --out ${pop1}_${pop2}_fst
+module load vcftools
+vcftools --gzvcf ./NoSingletons_maxMiss1.0_maxDP50_minDP10_noMT_noGATKfilters.vcf.gz.recode_annot_ld_newName.vcf.gz --weir-fst-pop ./$pop1 --weir-fst-pop ./$pop2 --out ./Fst_results/${pop1}_${pop2}_fst
 done
