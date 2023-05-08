@@ -1,24 +1,30 @@
 # Genomics-brown-bears
 ----------------
+
 Scripts used for analytical genomics analyses, including phylogenetic, structure, genetic diversity and differentiation.
 
 <!-- usage note: edit the H1 title above to personalize the manuscript -->
 [![HTML Manuscript](https://img.shields.io/badge/manuscript-HTML-blue.svg)](https://.../)
-+ I. Population structure
+
+----------------
++ >>>> I. Population structure
 ----------------
 
-+ II. Calculating Fst and Dxy
+
+
+----------------
++ >>>> II. Calculating Fst and Dxy
 ----------------
 2.1. Calculating pairwise Fst.
 
-I included the script [Fst.sh](https://github.com/odko2008/Genome-analyses-for-brown-bears/blob/main/vcf2phylip.py), which can calculate the pairwise Fst estimates between the populations. In the script, the vcf file name is fixed, so you can change as you want. Please create a text file for each population contaning the sample ID within the directory. 
+I included the script [Fst.sh](https://github.com/odko2008/Genome-analyses-for-brown-bears/blob/main/vcf2phylip.py), which can calculate the pairwise Fst estimates between the populations using VCFtools (Weir and Cockerham, 1984). In the script, the vcf file name is fixed, so you can change as you want. Please create text files for each population contaning the list of individuals in the directory before running the script. 
 ```
 ./Fst.sh
 ```
 2.2. Calculating pairwise Dxy.
 
-
-+ III. Building phylogenetic trees
+----------------
++ >>>> III. Building phylogenetic trees
 ----------------
 #### 3.1. Convert SNPs in VCF format to PHYLIP, NEXUS, binary NEXUS, or FASTA alignments for phylogenetic analysis.
 #### Please install vcf2phylip.py (Ortiz, E.M. 2019) from the link: [VCF to FASTA](https://github.com/odko2008/Genome-analyses-for-brown-bears/blob/main/vcf2phylip.py)
@@ -42,5 +48,5 @@ python vcf2phylip.py -h
 ```
 ./raxml_bears.sh
 ```
-+ IV. Historical demography
++ >>>> IV. Historical demography
 ----------------
