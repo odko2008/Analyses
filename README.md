@@ -11,14 +11,14 @@ Scripts used for the analyses in Tumendemberel et al. 2023. Please click on the 
 
 ## **2. Estimating pairwise Fst, Dxy and genetic diversity**
 ----------------
-2.1. Calculating pairwise Fst.
+### 2.1. Calculating pairwise Fst.
 
 The script, [Weir-fst-pop.sh](https://github.com/odko2008/Genome-analyses-for-brown-bears/blob/main/Weir-fst-pop.sh) can help calculate the pairwise mean and weighted Fst estimates (Weir and Cockerham, 1984) between the populations using VCFtools. The VCF file name is fixed in the script, so you can change it as same as your file. Before running the script, please create text files for each population containing the list of individuals in the directory. 
 
 ```
 ./Weir-fst-pop.sh
 ```
-2.2. Calculating pairwise Dxy.
+### 2.2. Calculating pairwise Dxy.
 Before estimating Dxy, we need to parse the VCF file.
 Most of my scripts use a processed `.vcf` format that we call `.geno`. This looks something like this:
 
@@ -36,6 +36,7 @@ python parseVCF.py –i input.vcf.gz | bgzip > 30inds.geno.gz
 ```
 #### The script `popgenWindows.py` in the [genomics_general](https://github.com/simonhmartin/genomics_general) directory computes some standard population genomic statistics in sliding windows: pi, FST and DXY. It requires the script genomics.py to be present in the same directory, or in your Python path. I created a text file containing samples and population names. 
 
+#### Example file
 ```
 Gobi1  Gobi
 Gobi2  Gobi
@@ -49,16 +50,34 @@ Sayan  NMongolia
 
 #### Our command:
 ```bash
-python ./genomics_general/popgenWindows.py -g 30inds.geno.gz -o 30inds_20kb_100b_geno.Fst.Dxy.pi.csv.gz -f phased -w 20000 -m 100 -s 20000 -p Polarbear -p ABCbears -p MainlandNA -p Cavebear -p Ancient -p Europe -p NMongolia -p Gobi -p Himalaya --popsFile sample_pop1.txt
+python ./genomics_general/popgenWindows.py -g 30inds.geno.gz -o 30inds_20kb_100b_geno.Fst.Dxy.pi.csv.gz -f phased -w 20000 -m 10 -s 25000 -p Polarbear -p ABCbears -p MainlandNA -p Cavebear -p Ancient -p Europe -p NMongolia -p Gobi -p Himalaya --popsFile sample_pop1.txt
 ```
 #### Note:
  * Genotype encoding is indicated by the `-f` flag. `-f phased` is normally used, see the table above. Other options are `-f haplo` for haploid data (although `phased` will also interpret haploid data correctly), `-f diplo` and `f pairs` which is like the `alleles` output in the table above, but assumes diplid data.
+ * `-g` the input geno file
+ * `-o` the output stats file
+* `-w` the size of the window in bp
+ 
+* `-m` the minimum number of sites within a window - here set to 10 to get an output
+* `-s` the size of the step for the sliding window - here it is 25 Kb.
+* `-p` the population names to compare from the pops file.
+* `--popsFile` the name of the pops file
+* `--writeFailedWindow` write to the output even if the window does not meet filtering requirements
 
-#### Additional information using the method can be found at [genomics_general](https://github.com/simonhmartin/genomics_general).
+#### Detailed information of the method can be found at [genomics_general](https://github.com/simonhmartin/genomics_general).
+
+### 2.3. Calculating heterozygosity, inbreeding coefficient, and other coefficients to check the results.
+
+The script, [diversity.sh](https://github.com/odko2008/Genome-analyses-for-brown-bears/blob/main/diversity.sh) can calculate the heterozygosity, inbreeding coefficient, and other diversity estimates using VCFtools. The VCF file name is fixed in the script, so you can change it as same as your file. You can use the same population information file for nucleotide diversity for each population to compare the results with sliding window approach by Martin et al. 2015.   
+
+```
+./diversity.sh
+```
 
 ## **3. Building phylogenetic trees**
 ----------------
-#### 3.1. Convert SNPs in VCF format to PHYLIP, NEXUS, binary NEXUS, or FASTA alignments for phylogenetic analysis. Please install vcf2phylip.py (Ortiz, E.M. 2019) from the link: [VCF to FASTA](https://github.com/odko2008/Genome-analyses-for-brown-bears/blob/main/vcf2phylip.py). The following command was used to convert the VCF to PHYLIP, NEXUS, and FASTA files. 
+### 3.1. Convert SNPs in VCF format to PHYLIP, NEXUS, binary NEXUS, or FASTA alignments for phylogenetic analysis.
+ Please install vcf2phylip.py (Ortiz, E.M. 2019) from the link: [VCF to FASTA](https://github.com/odko2008/Genome-analyses-for-brown-bears/blob/main/vcf2phylip.py). The following command was used to convert the VCF to PHYLIP, NEXUS, and FASTA files. 
 
 ```
 python vcf2phylip.py --input myfile.vcf --outgroup Spectacled --fasta --nexus
@@ -69,10 +88,11 @@ python vcf2phylip.py --input myfile.vcf --outgroup Spectacled --fasta --nexus
 python vcf2phylip.py -h
 ```
 
-#### 3.2. Constructing SVDquartets phylogenetic tree using the program PAUP.
+### 3.2. Constructing SVDquartets phylogenetic tree using the program PAUP.
 > Please open [SVDquartets_PAUP_commands](https://github.com/odko2008/Genome-analyses-for-brown-bears/blob/main/SVDquartets_PAUP_commands) for the details.
 
-#### 3.3. Constructing RAxML phylogenetic tree. Please select input file name, its directory, outgroup name, and the best substition models and change the protocols in the script [raxml_bears.sh](https://github.com/odko2008/Genome-analyses-for-brown-bears/blob/main/raxml_bears.sh). The further information on [step-by-step-tutorial](https://cme.h-its.org/exelixis/web/software/raxml/hands_on.html) and the latest RAxML version can be found from [github](https://github.com/stamatak/standard-RAxML).
+### 3.3. Constructing RAxML phylogenetic tree. 
+Please select input file name, its directory, outgroup name, and the best substition models and change the protocols in the script [raxml_bears.sh](https://github.com/odko2008/Genome-analyses-for-brown-bears/blob/main/raxml_bears.sh). The further information on [step-by-step-tutorial](https://cme.h-its.org/exelixis/web/software/raxml/hands_on.html) and the latest RAxML version can be found from [github](https://github.com/stamatak/standard-RAxML).
 
 ```
 ./raxml_bears.sh
