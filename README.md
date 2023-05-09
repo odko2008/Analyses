@@ -9,8 +9,6 @@ Scripts used for the analyses in Tumendemberel et al. 2023. Please click on the 
 ----------------
 
 
-
-
 ## **2. Estimating pairwise Fst and Dxy between populations**
 ----------------
 2.1. Calculating pairwise Fst.
@@ -21,9 +19,42 @@ The script, [Weir-fst-pop.sh](https://github.com/odko2008/Genome-analyses-for-br
 ./Weir-fst-pop.sh
 ```
 2.2. Calculating pairwise Dxy.
+Before estimating Dxy, we need to parse the VCF file.
+Most of my scripts use a processed `.vcf` format that we call `.geno`. This looks something like this:
 
+```
+#CHOM      POS      ind1      ind2      ind3
+scaffold1  1        A/A       A/G       G|A
+scaffold1  1        N/N       T/T       T|C
+```
 
+The script `parseVCF.py` developed by Simon Martin [genomics_general](https://github.com/simonhmartin/genomics_general) will convert `.vcf` to this `.geno` format.
 
+#### Our command:
+```bash
+python parseVCF.py –i input.vcf.gz | bgzip > 30inds.geno.gzls
+```
+#### The script `popgenWindows.py` in the [genomics_general](https://github.com/simonhmartin/genomics_general) directory computes some standard population genomic statistics in sliding windows: pi, FST and DXY. It requires the script genomics.py to be present in the same directory, or in your Python path. I created a text file containing samples and population names. 
+
+```
+Gobi1  Gobi
+Gobi2  Gobi
+Gobi3  Gobi
+Himalaya1  Himalaya
+Himalaya2  Himalaya
+Altai  Himalaya
+Khyangan  NMongolia
+Sayan  NMongolia
+```
+
+#### Our command:
+```bash
+python ./genomics_general/popgenWindows.py -g 30inds.geno.gz -o 30inds_20kb_100b_geno.Fst.Dxy.pi.csv.gz -f phased -w 20000 -m 100 -s 20000 -p Polarbear -p ABCbears -p MainlandNA -p Cavebear -p Ancient -p Europe -p NMongolia -p Gobi -p Himalaya --popsFile sample_pop1.txt
+```
+#### Note:
+ * Genotype encoding is indicated by the `-f` flag. `-f phased` is normally used, see the table above. Other options are `-f haplo` for haploid data (although `phased` will also interpret haploid data correctly), `-f diplo` and `f pairs` which is like the `alleles` output in the table above, but assumes diplid data.
+
+#### Additional information using the method can be found at [genomics_general](https://github.com/simonhmartin/genomics_general).
 
 ## **3. Building phylogenetic trees**
 ----------------
