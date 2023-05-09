@@ -50,7 +50,7 @@ Sayan  NMongolia
 
 #### Our command:
 ```bash
-python ./genomics_general/popgenWindows.py -g 30inds.geno.gz -o 30inds_20kb_100b_geno.Fst.Dxy.pi.csv.gz -f phased -w 20000 -m 10 -s 25000 -p Polarbear -p ABCbears -p MainlandNA -p Cavebear -p Ancient -p Europe -p NMongolia -p Gobi -p Himalaya --popsFile sample_pop1.txt
+python ./genomics_general/popgenWindows.py -g 30inds.geno.gz -o 30inds_20kb_10b_geno.Fst.Dxy.pi.csv.gz -f phased -w 20000 -m 10 -s 25000 -p Polarbear -p ABCbears -p MainlandNA -p Cavebear -p Ancient -p Europe -p NMongolia -p Gobi -p Himalaya --popsFile sample_pop1.txt
 ```
 #### Note:
  * Genotype encoding is indicated by the `-f` flag. `-f phased` is normally used, see the table above. Other options are `-f haplo` for haploid data (although `phased` will also interpret haploid data correctly), `-f diplo` and `f pairs` which is like the `alleles` output in the table above, but assumes diplid data.
