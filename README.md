@@ -34,7 +34,7 @@ The script `parseVCF.py` developed by Simon Martin [genomics_general](https://gi
 ```bash
 python parseVCF.py –i input.vcf.gz | bgzip > 30inds.geno.gz
 ```
-#### The script `popgenWindows.py` in the [genomics_general](https://github.com/simonhmartin/genomics_general) directory computes some standard population genomic statistics in sliding windows: pi, FST and DXY. It requires the script genomics.py to be present in the same directory, or in your Python path. I created a text file containing samples and population names. 
+The script `popgenWindows.py` in the [genomics_general](https://github.com/simonhmartin/genomics_general) directory computes some standard population genomic statistics in sliding windows: pi, FST and DXY. It requires the script genomics.py to be present in the same directory, or in your Python path. I created a text file containing samples and population names. 
 
 #### Example file
 ```
