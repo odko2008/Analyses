@@ -5,11 +5,11 @@ Scripts used for the analyses in Tumendemberel et al. 2023. Please click on the 
 [![HTML Manuscript](https://img.shields.io/badge/manuscript-HTML-blue.svg)](https://.../)
 
 
-## **1. Population structure and genetic diversity**
+## **1. Population structure**
 ----------------
 
 
-## **2. Estimating pairwise Fst and Dxy between populations**
+## **2. Estimating pairwise Fst, Dxy and genetic diversity**
 ----------------
 2.1. Calculating pairwise Fst.
 
@@ -32,7 +32,7 @@ The script `parseVCF.py` developed by Simon Martin [genomics_general](https://gi
 
 #### Our command:
 ```bash
-python parseVCF.py –i input.vcf.gz | bgzip > 30inds.geno.gzls
+python parseVCF.py –i input.vcf.gz | bgzip > 30inds.geno.gz
 ```
 #### The script `popgenWindows.py` in the [genomics_general](https://github.com/simonhmartin/genomics_general) directory computes some standard population genomic statistics in sliding windows: pi, FST and DXY. It requires the script genomics.py to be present in the same directory, or in your Python path. I created a text file containing samples and population names. 
 
