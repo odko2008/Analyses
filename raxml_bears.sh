@@ -7,4 +7,4 @@
 #$-l march=x86_64
 cd /mnt/lfs2/odko/bear_wgs/raxml/
 . /etc/profile
-/mnt/lfs2/odko/bear_wgs/raxml/standard-RAxML-master/raxmlHPC-SSE3 -N 10 -m GTRGAMMAX -s myfile.fasta -n raxml_2023_v1.tre -p 1019778819 pause
+/mnt/lfs2/odko/bear_wgs/raxml/standard-RAxML-master/raxmlHPC-SSE3 -N 10 -m GTRGAMMAX -p 12345 -x 12345 -#100 -s myfile.fasta -n raxml_2023_v1.tre -p 1019778819 pause
