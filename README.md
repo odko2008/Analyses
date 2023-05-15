@@ -7,7 +7,10 @@ Scripts used for the analyses in Tumendemberel et al. 2023. Please click on the 
 
 ## **1. Population structure**
 ----------------
+### 1.1. Principal Component Analysis 
 
+
+### 1.2. Population structure
 
 ## **2. Estimating pairwise Fst, Dxy and genetic diversity**
 ----------------
@@ -91,12 +94,23 @@ python vcf2phylip.py -h
 ### 3.2. Constructing SVDquartets phylogenetic tree using the program PAUP.
 > Please open [SVDquartets_PAUP_commands](https://github.com/odko2008/Genome-analyses-for-brown-bears/blob/main/SVDquartets_PAUP_commands) for the details.
 
-### 3.3. Constructing RAxML phylogenetic tree. 
-Please select input file name, its directory, outgroup name, and the best substition models and change the protocols in the script [raxml_bears.sh](https://github.com/odko2008/Genome-analyses-for-brown-bears/blob/main/raxml_bears.sh). The further information on [step-by-step-tutorial](https://cme.h-its.org/exelixis/web/software/raxml/hands_on.html) and the latest RAxML version can be found from [github](https://github.com/stamatak/standard-RAxML).
+### 3.3. Constructing ML phylogenetic tree using RAxML. 
+Please select input file name, its directory, outgroup name, and the best substition models and change the protocols in the script [raxml_bears.sh](https://github.com/odko2008/Genome-analyses-for-brown-bears/blob/main/raxml_bears.sh). The further information on [step-by-step-tutorial](https://cme.h-its.org/exelixis/web/software/raxml/hands_on.html). Please make sure you have the [RAxML](https://github.com/stamatak/standard-RAxML) installed and available in your system's PATH for this script to work properly. You can adjust the paths and file names according to your specific requirements.
 
 ```
 ./raxml_bears.sh
 ```
+### 3.3. Constructing ML phylogenetic tree using FastTree. 
+In this script, [FastTree_gtr.sh](https://github.com/odko2008/Genome-analyses-for-brown-bears/blob/main/FastTree_gtr.sh), you need to specify the input file (input.fasta) containing the sequence data in FASTA format. The resulting tree will be saved in the specified output file (output.newick).
+
+Please make sure you have FastTree installed and available in your system's PATH for this script to work properly. You can adjust the paths and file names according to your specific requirements.
+
+You can execute it by running bash [FastTree_gtr.sh](https://github.com/odko2008/Genome-analyses-for-brown-bears/blob/main/FastTree_gtr.sh) in your terminal.
+
+Please note that you need to have the FastTree software installed on your system to use this script. You can download FastTree from the following website: http://www.microbesonline.org/fasttree/
+
+Remember to modify the input file (input.fasta) with your actual sequence data in FASTA format.
+
 
 ## **4. Historical demography**
 --------------------------------
