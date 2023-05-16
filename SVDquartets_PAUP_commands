@@ -23,6 +23,9 @@ paup> describe/plot=p;
 #### To see the help system of the SVDquartets in PAUP program.
 paup> svdq ?
 
+#### Based on the previous publications (i.e. Kumar et al. 2017), spectacled bear is the oldest lineage in the dataset, so chose this one as an outgroup
+outgroup Spectacled
+
 #### The following command was used to construct phylogenetic tree with multilocus dataset of brown bears, cave and other bear species.
 paup> svdq evalq=all bootstrap nreps=100;
 
