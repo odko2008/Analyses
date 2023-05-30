@@ -8,7 +8,13 @@ Scripts used for the analyses in Tumendemberel et al. 2023. Please click on the 
 ## **1. Population structure**
 ----------------
 ### 1.1. Principal Component Analysis 
+The script, [pca.sh](https://github.com/odko2008/Genome-analyses-for-brown-bears/blob/main/pca.sh) converts VCF file to PLINK and then computes the eigenvalues and eigenvectors of the PCA using PLINK. The input VCF file is fixed, so please change the input file as same as yours.
 
+```
+./pca.sh
+```
+
+After using the eigenvalues and eigenvectors, the R script [pca_plot.R](https://github.com/odko2008/Genome-analyses-for-brown-bears/blob/main/pca_plot.R) was used to visualize the results. 
 
 ### 1.2. Population structure
 
