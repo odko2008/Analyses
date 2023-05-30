@@ -121,4 +121,4 @@ Remember to modify the input file (input.fasta) with your actual sequence data i
 
 ## **4. Historical demography**
 --------------------------------
-We followed the protocol for PSMC analysis using the methods in [PSMC](https://github.com/lh3/psmc/). 
+We infered population size history from each individual's diploid whole genome data using the Pairwise Sequentially Markovian Coalescent (PSMC). Here is the detailed script developed by Heng Li at [PSMC](https://github.com/lh3/psmc/).
