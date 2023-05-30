@@ -121,3 +121,4 @@ Remember to modify the input file (input.fasta) with your actual sequence data i
 
 ## **4. Historical demography**
 --------------------------------
+We followed the protocol for PSMC analysis using the methods in [PSMC](https://github.com/lh3/psmc/). 
