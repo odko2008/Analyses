@@ -17,7 +17,7 @@ The script, [pca.sh](https://github.com/odko2008/Genome-analyses-for-brown-bears
 After using the eigenvalues and eigenvectors, the R script [pca_plot.R](https://github.com/odko2008/Genome-analyses-for-brown-bears/blob/main/pca_plot.R) was used to visualize the results. 
 
 ### 1.2. Population structure
-Using the R script, [bear_LEA.R](https://github.com/odko2008/Genome-analyses-for-brown-bears/blob/main/bear_LEA.R) computed the admixture between the individuals and then visualized the results.
+Using the R script; [bear_LEA.R](https://github.com/odko2008/Genome-analyses-for-brown-bears/blob/main/bear_LEA.R), we computed the admixture between the individuals and then visualized the results.
 
 ## **2. Estimating pairwise Fst, Dxy and genetic diversity**
 ----------------
