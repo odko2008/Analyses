@@ -4,7 +4,7 @@
 # clear workspace
 rm(list = ls()) 
 # set working directory
-setwd("D:/Bear_genome/Molecular_Ecology/Scripts/LEA_analyses") 
+setwd("D:/yourDirectory/LEA_analyses") 
 load("project30inds.RData")
 
 # load libraries 
