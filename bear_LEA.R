@@ -34,33 +34,33 @@ output = vcf2geno("NoSpecAsiaSunSloth.vcf")
 plot(project30inds, col = "blue", pch = 19, cex = 1.2)
 
 ## ----fig.width=10, fig.height=5, echo=TRUE------------------------------------
-###### Based on the figure, the K=4 and K=5 was the best supported structure.
+###### Based on the figure, the K=3 had the lowest entropy estimate, however, K=7 described the most biologically and geographically meaningful separation for brown bear populations, cave and polar bears.
+##### Plot for K=3
+# best3 = which.min(cross.entropy(project30inds, K = 3))
+# my.colors <- c("tomato", "lightblue", 
+#                "olivedrab")
+# K3 = barchart(project30inds, K = 3, run = best3,
+#               border = NA, space = 0, 
+#               col = my.colors, 
+#               xlab = "Individuals",
+#               ylab = "Ancestry proportions",
+#               main = "Ancestry matrix K=3") -> bp
+# axis(1, at = 1:length(bp$order), 
+#      labels = bp$order, las=1, 
+#      cex.axis = .6)
 
-### Plot results for K=4 
-best = which.min(cross.entropy(project30inds, K = 4))
+##### Plot for K=7
+# find the best/lowest value for runs of K=7
+best7 = which.min(cross.entropy(project30inds, K = 7))
 my.colors <- c("tomato", "lightblue", 
-               "olivedrab", "gold")
-K4 = barchart(project30inds, K = 4, run = best,
-              border = NA, space = 0, 
-              col = my.colors, 
-              xlab = "Individuals",
-              ylab = "Ancestry proportions",
-              main = "Ancestry matrix") -> bp
-axis(1, at = 1:length(bp$order), 
-     labels = bp$order, las=1, 
-     cex.axis = .6)
+               "olivedrab", "gold", "brown", "blue", "black")
 
-### Plot results for K=5
-# select the best run for K = 5
-best5 = which.min(cross.entropy(project30inds, K = 5))
-my.colors <- c("tomato", "lightblue", 
-               "olivedrab", "gold", "cyan4")
-K5 = barchart(project30inds, K = 5, run = best,
-              border = NA, space = 0, 
-              col = my.colors, 
-              xlab = "Individuals",
-              ylab = "Ancestry proportions",
-              main = "Ancestry matrix") -> bp
-axis(1, at = 1:length(bp$order), 
-     labels = bp$order, las=1, 
-     cex.axis = .6)
+K7 <- barchart(project30inds, K = 7, run = best7,
+             border = NA, space = 0, 
+             col = my.colors, 
+             xlab = "Individuals",
+             ylab = "Ancestry proportions",
+             main = "Ancestry matrix K=7") -> bp
+axis(1, at = 1:length(bp$order),  # to add sample ID in the figure
+      labels = bp$order, las=1, 
+      cex.axis = .6)
