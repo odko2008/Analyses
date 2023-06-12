@@ -1,5 +1,5 @@
 #!/bin/bash
-# This script is written bt Jena at https://www.biostars.org/p/349015/ and solved my issue of creating a lots of dots per line in prune.out file.
+# This script is written by Jena at https://www.biostars.org/p/349015/ and solved my issue of creating a lots of dots per line in prune.out file in my previous analysis.
 
 # SCRIPT USAGE:
 # bash plink_pruning_prep.sh filtered_snp_file.vcf
