@@ -126,3 +126,5 @@ Remember to modify the input file (input.fasta) with your actual sequence data i
 The PSMC method is based on the assumption that the coalescent process, which describes the process of tracing back the ancestry of genetic material in a population, can be modeled as a Markovian process. By analyzing the distribution of pairwise differences between the genomes of individuals, PSMC attempts to estimate the effective population size of a population at different points in the past.
 
 To perform a PSMC analysis, researchers typically use genome sequencing data from multiple individuals within a population, species, or closely related species. The genomes are divided into overlapping segments, and the number of differences between pairs of segments is calculated. By considering the patterns of these differences, PSMC reconstructs a population size trajectory, which provides insights into the historical changes in population size.
+
+We made a sligh modification on the previous PSMC plotting script at the link [PSMC_plot](https://github.com/odko2008/Genome-analyses-for-brown-bears/blob/main/psmc_plot3.pl). 
