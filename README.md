@@ -121,4 +121,8 @@ Remember to modify the input file (input.fasta) with your actual sequence data i
 
 ## **4. Historical demography**
 --------------------------------
-We infered population size histories from each individual's diploid whole genome data using the Pairwise Sequentially Markovian Coalescent (PSMC). Here is the detailed script developed by Heng Li at the [link](https://github.com/lh3/psmc/).
+ We infered population size histories from each individual's diploid whole genome data using the Pairwise Sequentially Markovian Coalescent (PSMC). Here is the detailed script developed by Heng Li at the [link](https://github.com/lh3/psmc/).
+ 
+The PSMC method is based on the assumption that the coalescent process, which describes the process of tracing back the ancestry of genetic material in a population, can be modeled as a Markovian process. By analyzing the distribution of pairwise differences between the genomes of individuals, PSMC attempts to estimate the effective population size of a population at different points in the past.
+
+To perform a PSMC analysis, researchers typically use genome sequencing data from multiple individuals belonging to the same species or population. The genomes are divided into overlapping segments, and the number of differences between pairs of segments is calculated. By considering the patterns of these differences, PSMC reconstructs a population size trajectory, which provides insights into the historical changes in population size.
