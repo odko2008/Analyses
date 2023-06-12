@@ -1,5 +1,5 @@
 #!/bin/bash
-## This script is written by Jena at https://www.biostars.org/p/349015/ and solved the common issue of creating a lots of dots per line in prune.out file. 
+## This script is written by Jena at https://www.biostars.org/p/349015/ and solved my previous issue of creating a lots of dots per line in prune.out file. Apparently, this mistake was common and decided to share here as well.
 ## It included additional preparation stage on the filtered SNP file before running LD prunning.  
 
 # SCRIPT USAGE:
