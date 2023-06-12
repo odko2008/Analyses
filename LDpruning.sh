@@ -53,6 +53,6 @@ bcftools annotate -c CHROM,POS,ID -a annotation_file.tab.gz $VCF_in -o $VCF_out
 echo Ready for plink! Have fun :\)
 
 # now you are ready to run plink pruning on the output file (--allow-extra-chr is needed for nonhuman organisms), e.g.
-# plink --indep 50 5 2 --vcf $VCF_out --allow-extra-chr
-# plink --extract plink.prune.in --vcf $VCF_out --genome --recode --out plinkMDS --allow-extra-chr
-# plink --file plinkMDS --read-genome plinkMDS.genome --cluster --mds-plot 
+plink --indep 50 5 2 --vcf $VCF_out --allow-extra-chr
+plink --extract plink.prune.in --vcf $VCF_out --genome --recode --out plinkMDS --allow-extra-chr
+plink --file plinkMDS --read-genome plinkMDS.genome --cluster --mds-plot 
