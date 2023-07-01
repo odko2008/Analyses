@@ -17,7 +17,7 @@ The script, [pca.sh](https://github.com/odko2008/Genome-analyses-for-brown-bears
 After using the eigenvalues and eigenvectors, the R script [pca_plot.R](https://github.com/odko2008/Genome-analyses-for-brown-bears/blob/main/pca_plot.R) was used to visualize the results. 
 
 ### 1.2. Population structure
-We evaluated population structure using the [LEA R package](http://membres-timc.imag.fr/Olivier.Francois/LEA/index.html)(Frichot & François 2015) admixture analysis based on sparse nonnegative matrix factorization (sNMF) (Frichot et al., 2014), the program ADMIXTURE (Alexander & Lange, 2011) based on expectation maximization (EM) (Alexander et al., 2009) with 50 repeats for the full dataset and 10 repeats for the brown bears only dataset of using the admixture-wrapper script (https://github.com/dportik/admixture-wrapper). Please see the R script; [bear_LEA.R](https://github.com/odko2008/Genome-analyses-for-brown-bears/blob/main/bear_LEA.R)  
+We evaluated population structure using the [LEA R package](http://membres-timc.imag.fr/Olivier.Francois/LEA/index.html) (Frichot & François 2015) admixture analysis based on sparse nonnegative matrix factorization (sNMF) (Frichot et al., 2014), the program ADMIXTURE (Alexander & Lange, 2011) based on expectation maximization (EM) (Alexander et al., 2009) with 50 repeats for the full dataset and 10 repeats for the brown bears only dataset of using the admixture-wrapper script (https://github.com/dportik/admixture-wrapper). Please see the R script; [bear_LEA.R](https://github.com/odko2008/Genome-analyses-for-brown-bears/blob/main/bear_LEA.R).  
 
 ## **2. Estimating pairwise Fst, Dxy and genetic diversity**
 ----------------
