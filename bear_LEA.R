@@ -20,21 +20,21 @@ library(LEA) # pop. gen. analyses
 # # load data
 data("./input.vcf")
 
-output = vcf2geno("NoSpecAsiaSunSloth.vcf")
+output = vcf2geno("input.vcf")
 
-### already run
-# project30inds=snmf("NoSpecAsiaSunSloth.geno",
-#                K = 1:10,
-#                entropy = TRUE,
-#                repetitions = 10,
-#                project = "new")
+## already run
+project30inds=snmf("input.geno",
+                K = 1:10,
+                entropy = TRUE,
+                repetitions = 50,
+                project = "new")
 
 #save.image("D:/yourdirectory/project30inds.RData")
 
 plot(project30inds, col = "blue", pch = 19, cex = 1.2)
 
 ## ----fig.width=10, fig.height=5, echo=TRUE------------------------------------
-###### Based on the figure, the K=3 had the lowest entropy estimate, however, K=7 described the most biologically and geographically meaningful separation for brown bear populations, cave and polar bears.
+###### Based on the figure, K=3 had the lowest entropy estimate; however, K = 7 described the most biologically and geographically meaningful separation for brown bear populations, cave, and polar bears.
 ##### Plot for K=3
 # best3 = which.min(cross.entropy(project30inds, K = 3))
 # my.colors <- c("tomato", "lightblue", 
