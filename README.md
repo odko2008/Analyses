@@ -2,7 +2,8 @@
 ----------------
 Scripts used for the analyses in Tumendemberel et al. 2023. Please click on the blue button to see the detailed information of the study.
  <!-- usage note: edit the H1 title above to personalize the manuscript -->
-[![HTML Manuscript](https://img.shields.io/badge/manuscript-HTML-blue.svg)](https://.../)
+[![HTML Manuscript](https://img.shields.io/badge/manuscript-HTML-blue.svg)](https://https://onlinelibrary.wiley.com/doi/10.1111/mec.17091/)
+https://doi.org/10.1111/mec.17091
 
 
 ## **1. Population structure**
